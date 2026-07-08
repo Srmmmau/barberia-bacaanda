@@ -1,0 +1,27 @@
+---
+import type { SiteCopy } from '@/content/types';
+
+interface Props {
+  copy: SiteCopy;
+}
+
+const { copy } = Astro.props;
+---
+
+<section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+  <div class="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+    <div>
+      <h2 class="font-display text-3xl sm:text-4xl">{copy.about.heading}</h2>
+      <p class="mt-4 max-w-lg text-base text-muted sm:text-lg">{copy.about.body}</p>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 sm:gap-6">
+      {copy.about.stats.map((stat) => (
+        <div class="rounded-2xl border border-border bg-surface px-5 py-6 text-center">
+          <div class="font-display text-2xl text-gold sm:text-3xl">{stat.value}</div>
+          <div class="mt-1 text-xs text-muted sm:text-sm">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

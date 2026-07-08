@@ -1,0 +1,16 @@
+---
+import BaseLayout from '@/components/layout/BaseLayout.astro';
+import Button from '@/components/ui/Button.astro';
+---
+
+<BaseLayout
+  lang="en"
+  title="Page not found — Bacaanda Barbershop"
+  description="The page you're looking for doesn't exist."
+>
+  <main class="flex min-h-screen flex-col items-center justify-center gap-4 px-4 text-center">
+    <h1 class="font-display text-4xl">404</h1>
+    <p class="text-muted">We couldn't find this page.</p>
+    <Button href="/en/" external={false} variant="primary">Back to home</Button>
+  </main>
+</BaseLayout>

@@ -1,0 +1,21 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
+import sitemap from '@astrojs/sitemap';
+
+// https://astro.build/config
+export default defineConfig({
+  site: 'https://barberiabacaanda.mx',
+  i18n: {
+    defaultLocale: 'es',
+    locales: ['es', 'en'],
+    routing: { prefixDefaultLocale: true },
+  },
+  integrations: [sitemap()],
+  redirects: {
+    '/': '/es/',
+  },
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});

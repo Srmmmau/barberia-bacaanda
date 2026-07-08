@@ -1,0 +1,18 @@
+---
+import { languages, alternateLangUrl, type Lang } from '@/lib/i18n';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const other: Lang = lang === 'es' ? 'en' : 'es';
+const href = alternateLangUrl(Astro.url, other);
+---
+
+<a
+  href={href}
+  class="rounded-full border border-border px-3 py-1.5 text-xs font-semibold uppercase tracking-wide text-muted transition hover:border-gold hover:text-gold"
+>
+  {languages[other]}
+</a>

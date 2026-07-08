@@ -1,0 +1,54 @@
+---
+import logo from '@/assets/brand/logo.png';
+import { telUrl, whatsappUrl, instagramUrl, formattedPhone, bookingUrl } from '@/lib/contact';
+import type { SiteCopy } from '@/content/types';
+
+interface Props {
+  copy: SiteCopy;
+}
+
+const { copy } = Astro.props;
+
+const links = [
+  { href: '#servicios', label: copy.nav.services },
+  { href: '#galeria', label: copy.nav.gallery },
+  { href: '#resenas', label: copy.nav.reviews },
+  { href: '#ubicacion', label: copy.nav.location },
+];
+---
+
+<footer class="border-t border-border/60 py-14">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 md:grid-cols-3">
+    <div>
+      <div class="flex items-center gap-2">
+        <img src={logo.src} alt="Barbería Bacaanda" class="h-10 w-10 rounded-full" />
+        <span class="font-display text-base uppercase tracking-wide">Bacaanda</span>
+      </div>
+      <p class="mt-3 max-w-xs text-sm text-muted">{copy.footer.tagline}</p>
+    </div>
+
+    <div>
+      <h3 class="font-display text-sm uppercase tracking-wide text-muted">{copy.footer.quickLinksHeading}</h3>
+      <ul class="mt-3 space-y-2 text-sm">
+        {links.map((link) => (
+          <li><a href={link.href} class="text-text/80 hover:text-gold">{link.label}</a></li>
+        ))}
+        <li><a href={bookingUrl()} target="_blank" rel="noopener noreferrer" class="text-text/80 hover:text-gold">{copy.nav.book}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="font-display text-sm uppercase tracking-wide text-muted">{copy.footer.contactHeading}</h3>
+      <ul class="mt-3 space-y-2 text-sm text-text/80">
+        <li>{copy.location.addressLines[0]}, {copy.location.addressLines[2]}</li>
+        <li><a href={telUrl()} class="hover:text-gold">{formattedPhone()}</a></li>
+        <li><a href={whatsappUrl(copy.finalCta.whatsappMessage)} target="_blank" rel="noopener noreferrer" class="hover:text-gold">WhatsApp</a></li>
+        <li><a href={instagramUrl()} target="_blank" rel="noopener noreferrer" class="hover:text-gold">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mx-auto mt-10 max-w-6xl px-4 text-xs text-muted sm:px-6">
+    © {new Date().getFullYear()} Barbería Bacaanda. {copy.footer.rights}
+  </div>
+</footer>

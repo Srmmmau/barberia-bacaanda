@@ -1,0 +1,90 @@
+---
+import logo from '@/assets/brand/logo.png';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher.astro';
+import { bookingUrl } from '@/lib/contact';
+import type { SiteCopy } from '@/content/types';
+import type { Lang } from '@/lib/i18n';
+
+interface Props {
+  lang: Lang;
+  copy: SiteCopy;
+}
+
+const { lang, copy } = Astro.props;
+
+const links = [
+  { href: '#servicios', label: copy.nav.services },
+  { href: '#galeria', label: copy.nav.gallery },
+  { href: '#resenas', label: copy.nav.reviews },
+  { href: '#ubicacion', label: copy.nav.location },
+];
+---
+
+<header class="sticky top-0 z-40 border-b border-border/60 bg-ink/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <a href={`/${lang}/`} class="flex items-center gap-2 shrink-0">
+      <img src={logo.src} alt="Barbería Bacaanda" class="h-11 w-11 rounded-full" />
+      <span class="hidden font-display text-lg uppercase tracking-wide sm:inline">Bacaanda</span>
+    </a>
+
+    <nav class="hidden items-center gap-6 lg:flex">
+      {links.map((link) => (
+        <a href={link.href} class="text-sm font-medium text-muted transition hover:text-text">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <LanguageSwitcher lang={lang} />
+      <a
+        href={bookingUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hidden rounded-full bg-gold px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-ink transition hover:bg-gold-hover sm:inline-flex"
+      >
+        {copy.nav.book}
+      </a>
+      <button
+        id="menu-toggle"
+        aria-label="Menu"
+        class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border lg:hidden"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+          <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-border/60 px-4 py-3 lg:hidden">
+    {links.map((link) => (
+      <a href={link.href} class="rounded-md px-2 py-2 text-sm font-medium text-muted hover:bg-surface hover:text-text">
+        {link.label}
+      </a>
+    ))}
+    <a
+      href={bookingUrl()}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-1 rounded-full bg-gold px-4 py-2 text-center font-display text-xs font-semibold uppercase tracking-wide text-ink"
+    >
+      {copy.nav.book}
+    </a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    menu?.classList.toggle('flex');
+  });
+  menu?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      menu.classList.remove('flex');
+    })
+  );
+</script>

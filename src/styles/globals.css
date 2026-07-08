@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/inter';
+@import '@fontsource/oswald/500.css';
+@import '@fontsource/oswald/600.css';
+@import '@fontsource/oswald/700.css';
+
+@theme {
+  /* Brand colors — extracted from the shop's mural (royal blue, barber-pole red,
+     sunflower gold) and the neon badge ring on the logo (magenta/orange glow). */
+  --color-ink: #0a0a0d;
+  --color-surface: #16161c;
+  --color-surface-raised: #1e1e26;
+  --color-border: #2c2c36;
+
+  --color-primary: #2547b8;
+  --color-primary-hover: #1c3690;
+  --color-red: #c8272a;
+  --color-red-hover: #a81f22;
+  --color-gold: #e8a63d;
+  --color-gold-hover: #d4922b;
+
+  --color-text: #f5f1e8;
+  --color-muted: #a3a3ad;
+
+  --font-display: 'Oswald Variable', 'Oswald', sans-serif;
+  --font-body: 'Inter Variable', 'Inter', sans-serif;
+
+  --shadow-glow: 0 0 40px -8px rgb(232 166 61 / 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+  }
+}
+
+@utility brand-glow-ring {
+  background: conic-gradient(from 180deg, #e94ea0, #a86bd8, #f0973b, #f2c14e, #e94ea0);
+}
