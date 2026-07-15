@@ -57,6 +57,11 @@ export const es: SiteCopy = {
     ],
     ctaLabel: 'Ver disponibilidad y precios',
   },
+  booking: {
+    heading: 'Agenda tu cita',
+    subheading: 'Elige servicio, barbero y horario sin salir de la página.',
+    fallbackLabel: '¿No carga? Ábrelo en una pestaña nueva',
+  },
   gallery: {
     heading: 'El estudio',
     subheading: 'Un mural que no vas a olvidar, y barberos que tampoco.',

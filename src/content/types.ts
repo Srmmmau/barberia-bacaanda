@@ -21,6 +21,7 @@ export interface SiteCopy {
     items: { name: string; description: string }[];
     ctaLabel: string;
   };
+  booking: { heading: string; subheading: string; fallbackLabel: string };
   gallery: { heading: string; subheading: string };
   reviews: {
     heading: string;

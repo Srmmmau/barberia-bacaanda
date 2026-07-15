@@ -1,6 +1,5 @@
 ---
 import Button from '@/components/ui/Button.astro';
-import { bookingUrl } from '@/lib/contact';
 import type { SiteCopy } from '@/content/types';
 
 interface Props {
@@ -34,7 +33,7 @@ const { copy } = Astro.props;
     </div>
 
     <div class="mt-10">
-      <Button href={bookingUrl()} variant="outline">{copy.services.ctaLabel}</Button>
+      <Button href="#agendar" variant="outline" external={false}>{copy.services.ctaLabel}</Button>
     </div>
   </div>
 </section>

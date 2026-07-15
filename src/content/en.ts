@@ -57,6 +57,11 @@ export const en: SiteCopy = {
     ],
     ctaLabel: 'Check availability and pricing',
   },
+  booking: {
+    heading: 'Book your appointment',
+    subheading: 'Pick a service, barber, and time without leaving the page.',
+    fallbackLabel: "Not loading? Open it in a new tab",
+  },
   gallery: {
     heading: 'The studio',
     subheading: "A mural you won't forget, and barbers you won't either.",

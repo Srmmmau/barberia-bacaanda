@@ -1,6 +1,6 @@
 ---
 import logo from '@/assets/brand/logo.png';
-import { telUrl, whatsappUrl, instagramUrl, formattedPhone, bookingUrl } from '@/lib/contact';
+import { telUrl, whatsappUrl, instagramUrl, formattedPhone } from '@/lib/contact';
 import type { SiteCopy } from '@/content/types';
 
 interface Props {
@@ -33,7 +33,7 @@ const links = [
         {links.map((link) => (
           <li><a href={link.href} class="text-text/80 hover:text-gold">{link.label}</a></li>
         ))}
-        <li><a href={bookingUrl()} target="_blank" rel="noopener noreferrer" class="text-text/80 hover:text-gold">{copy.nav.book}</a></li>
+        <li><a href="#agendar" class="text-text/80 hover:text-gold">{copy.nav.book}</a></li>
       </ul>
     </div>
 

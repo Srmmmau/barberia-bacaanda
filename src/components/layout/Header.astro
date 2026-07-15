@@ -1,7 +1,7 @@
 ---
 import logo from '@/assets/brand/logo.png';
 import LanguageSwitcher from '@/components/ui/LanguageSwitcher.astro';
-import { bookingUrl } from '@/lib/contact';
+import { telUrl, formattedPhone } from '@/lib/contact';
 import type { SiteCopy } from '@/content/types';
 import type { Lang } from '@/lib/i18n';
 
@@ -38,9 +38,21 @@ const links = [
     <div class="flex items-center gap-3">
       <LanguageSwitcher lang={lang} />
       <a
-        href={bookingUrl()}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={telUrl()}
+        aria-label={`${copy.location.phoneLabel} · ${formattedPhone()}`}
+        title={`${copy.location.phoneLabel} · ${formattedPhone()}`}
+        class="hidden h-9 w-9 items-center justify-center rounded-full border border-border transition hover:border-gold hover:text-gold sm:inline-flex"
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+          <path
+            d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2c-8 0-15-7-15-15a2 2 0 0 1 2-2Z"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </a>
+      <a
+        href="#agendar"
         class="hidden rounded-full bg-gold px-4 py-2 font-display text-xs font-semibold uppercase tracking-wide text-ink transition hover:bg-gold-hover sm:inline-flex"
       >
         {copy.nav.book}
@@ -63,10 +75,11 @@ const links = [
         {link.label}
       </a>
     ))}
+    <a href={telUrl()} class="rounded-md px-2 py-2 text-sm font-medium text-muted hover:bg-surface hover:text-text">
+      {copy.location.phoneLabel} · {formattedPhone()}
+    </a>
     <a
-      href={bookingUrl()}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="#agendar"
       class="mt-1 rounded-full bg-gold px-4 py-2 text-center font-display text-xs font-semibold uppercase tracking-wide text-ink"
     >
       {copy.nav.book}

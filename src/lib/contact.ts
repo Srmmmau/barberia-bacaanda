@@ -1,6 +1,7 @@
 const WHATSAPP_NUMBER = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
 const PHONE_NUMBER = import.meta.env.PUBLIC_PHONE_NUMBER;
 const BOOKING_URL = import.meta.env.PUBLIC_BOOKING_URL;
+const AGENDAPRO_IFRAME_SRC = import.meta.env.PUBLIC_AGENDAPRO_IFRAME_SRC;
 const INSTAGRAM_HANDLE = import.meta.env.PUBLIC_INSTAGRAM_HANDLE;
 
 export function whatsappUrl(message: string): string {
@@ -8,11 +9,16 @@ export function whatsappUrl(message: string): string {
 }
 
 export function telUrl(): string {
-  return `tel:+${PHONE_NUMBER}`;
+  // PHONE_NUMBER is stored without the Mexico country code (52) for display purposes
+  return `tel:+52${PHONE_NUMBER}`;
 }
 
 export function bookingUrl(): string {
   return BOOKING_URL;
+}
+
+export function agendaProIframeSrc(): string {
+  return AGENDAPRO_IFRAME_SRC;
 }
 
 export function instagramUrl(): string {

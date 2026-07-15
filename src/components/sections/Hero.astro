@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import heroPhoto from '@/assets/gallery/photo-6.png';
+import heroPhoto from '@/assets/gallery/mural.jpeg';
 import Button from '@/components/ui/Button.astro';
-import { bookingUrl, whatsappUrl } from '@/lib/contact';
+import { whatsappUrl } from '@/lib/contact';
 import type { SiteCopy } from '@/content/types';
 
 interface Props {
@@ -16,8 +16,8 @@ const { copy } = Astro.props;
   <div class="absolute inset-0">
     <Image
       src={heroPhoto}
-      alt="Barbero de Bacaanda dando un corte frente al mural del estudio"
-      class="h-full w-full object-cover object-[70%_20%]"
+      alt="Mural de la catrina con tocado de girasol y serpiente en el estudio de Bacaanda"
+      class="h-full w-full object-cover object-[60%_35%]"
       widths={[640, 1024, 1600]}
       sizes="100vw"
       loading="eager"
@@ -48,7 +48,7 @@ const { copy } = Astro.props;
     </div>
 
     <div class="mt-4 flex flex-wrap gap-3">
-      <Button href={bookingUrl()} variant="primary">{copy.hero.ctaBook}</Button>
+      <Button href="#agendar" variant="primary" external={false}>{copy.hero.ctaBook}</Button>
       <Button href={whatsappUrl(copy.hero.whatsappMessage)} variant="secondary">
         {copy.hero.ctaWhatsapp}
       </Button>
