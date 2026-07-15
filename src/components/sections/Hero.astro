@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import heroPhoto from '@/assets/gallery/mural-hero.jpg';
 import Button from '@/components/ui/Button.astro';
-import { whatsappUrl } from '@/lib/contact';
+import { whatsappUrl, telUrl } from '@/lib/contact';
 import type { SiteCopy } from '@/content/types';
 
 interface Props {
@@ -52,6 +52,7 @@ const { copy } = Astro.props;
       <Button href={whatsappUrl(copy.hero.whatsappMessage)} variant="secondary">
         {copy.hero.ctaWhatsapp}
       </Button>
+      <Button href={telUrl()} variant="call" external={false}>{copy.location.phoneLabel}</Button>
     </div>
   </div>
 </section>

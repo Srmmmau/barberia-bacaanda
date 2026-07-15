@@ -1,7 +1,7 @@
 ---
 interface Props {
   href: string;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'call' | 'outline';
   class?: string;
   external?: boolean;
 }
@@ -11,6 +11,7 @@ const { href, variant = 'primary', class: className = '', external = true } = As
 const variants = {
   primary: 'bg-gold text-ink hover:bg-gold-hover shadow-glow',
   secondary: 'bg-[#25D366] text-ink hover:brightness-95',
+  call: 'bg-red text-text hover:bg-red-hover',
   outline: 'border border-border text-text hover:border-gold hover:text-gold',
 };
 ---
