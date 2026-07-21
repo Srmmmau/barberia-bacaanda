@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://barberiabacaanda.mx',
+  site: 'https://bacaandabarberia.com',
   i18n: {
     defaultLocale: 'es',
     locales: ['es', 'en'],
