@@ -18,7 +18,7 @@ export const en: SiteCopy = {
     title: 'The only barbershop studio in Polanco',
     subtitle:
       'Precision cuts, hot towel shaves, and a drink on the house while you wait. Master barbers, bilingual environment.',
-    ratingLabel: 'on Google · 246 reviews',
+    ratingLabel: 'on Google · 249 reviews',
     ctaBook: 'Book a slot',
     ctaWhatsapp: 'Message us on WhatsApp',
     whatsappMessage: "Hi! I'd like to book an appointment at Bacaanda 💈",
@@ -27,7 +27,7 @@ export const en: SiteCopy = {
     heading: 'A barbershop, not a salon',
     body: "Since 2022, Bacaanda has been a barbershop studio in the heart of Polanco — not just another hair salon. We work with straight razors, hot towels, and enough time to actually do it right. Clients come for the cut; they come back for the experience.",
     stats: [
-      { value: '4.8★', label: '246 Google reviews' },
+      { value: '4.8★', label: '249 Google reviews' },
       { value: '2022', label: 'Opened in Polanco' },
       { value: 'ES/EN', label: 'Bilingual environment' },
       { value: '100%', label: 'Master barbers' },
@@ -69,20 +69,20 @@ export const en: SiteCopy = {
   reviews: {
     heading: 'What people say',
     ratingValue: '4.8',
-    ratingCount: '246 Google reviews',
+    ratingCount: '249 Google reviews',
     quotes: [
       {
-        text: "I've known Bacaanda for a long time. Everything is excellent. I always come back. The barbers are excellent.",
-        author: 'Mauricio Aguilar',
-        meta: 'Google · Haircut',
-      },
-      {
-        text: 'Mario did an amazing job. Super professional, detail-oriented, and easy to talk to. One of the best haircuts I\'ve had in CDMX.',
-        author: 'Fabio Anaya',
+        text: "Excellent experience at Barbería Bacaanda. From the moment you arrive you can tell the level of the place: modern, clean, very comfortable facilities, with a great, well-kept atmosphere.",
+        author: 'Ivan Guerra Betancourt',
         meta: 'Google',
       },
       {
-        text: 'Amazing service, English speaking environment, great hair cuts each time.',
+        text: "Great service, everyone's really friendly, they play football and good music. I've been going for 4 years and it's always been great.",
+        author: 'Jairo Medina Perez',
+        meta: 'Google',
+      },
+      {
+        text: 'A nice extra that makes you feel at home: you can ask for a beer, coffee, or soda.',
         author: 'Google review',
         meta: 'Google',
       },

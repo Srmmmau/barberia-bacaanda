@@ -18,7 +18,7 @@ export const es: SiteCopy = {
     title: 'La única barbería studio en Polanco',
     subtitle:
       'Cortes de autor, hot shave con toalla caliente y una bebida de cortesía mientras esperas. Barberos maestros, ambiente bilingüe.',
-    ratingLabel: 'en Google · 246 reseñas',
+    ratingLabel: 'en Google · 249 reseñas',
     ctaBook: 'Agendar cita',
     ctaWhatsapp: 'Escríbenos por WhatsApp',
     whatsappMessage: 'Hola! Quisiera agendar una cita en Bacaanda 💈',
@@ -27,7 +27,7 @@ export const es: SiteCopy = {
     heading: 'Barbería, no peluquería',
     body: 'Desde 2022, Bacaanda es un estudio de barbería en el corazón de Polanco — no una peluquería más. Trabajamos con navaja, toalla caliente y el tiempo necesario para hacer bien el trabajo. Nuestros clientes vienen por el corte; vuelven por la experiencia.',
     stats: [
-      { value: '4.8★', label: '246 reseñas en Google' },
+      { value: '4.8★', label: '249 reseñas en Google' },
       { value: '2022', label: 'Abrimos en Polanco' },
       { value: 'ES/EN', label: 'Ambiente bilingüe' },
       { value: '100%', label: 'Barberos maestros' },
@@ -69,20 +69,20 @@ export const es: SiteCopy = {
   reviews: {
     heading: 'Lo que dicen de nosotros',
     ratingValue: '4.8',
-    ratingCount: '246 reseñas en Google',
+    ratingCount: '249 reseñas en Google',
     quotes: [
       {
-        text: 'Conozco Bacaaanda desde hace mucho tiempo. Todo es excelente. Siempre vuelvo. Los barberos son excelentes.',
-        author: 'Mauricio Aguilar',
-        meta: 'Google · Corte de cabello',
-      },
-      {
-        text: 'Mario hizo un trabajo increíble. Súper profesional, atento al detalle y fácil de tratar. Uno de los mejores cortes que me han hecho en CDMX.',
-        author: 'Fabio Anaya',
+        text: 'Excelente experiencia en Barbería Bacaanda. Desde que llegas se nota el nivel del lugar: instalaciones modernas, limpias y muy cómodas, con un ambiente súper agradable y bien cuidado.',
+        author: 'Ivan Guerra Betancourt',
         meta: 'Google',
       },
       {
-        text: 'Excelente servicio, ambiente donde hablan inglés, muy buenos cortes cada vez.',
+        text: 'Súper buen servicio, son muy amables y ponen fútbol y buena música. Voy hace 4 años y siempre me ha ido bien.',
+        author: 'Jairo Medina Perez',
+        meta: 'Google',
+      },
+      {
+        text: 'Un extra que te hace sentir en casa: puedes pedir cerveza, café o refresco.',
         author: 'Reseña de Google',
         meta: 'Google',
       },
