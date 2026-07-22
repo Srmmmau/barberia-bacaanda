@@ -20,7 +20,7 @@ export const es: SiteCopy = {
       'Cortes de autor, hot shave con toalla caliente y una bebida de cortesía mientras esperas. Barberos maestros, ambiente bilingüe.',
     ratingLabel: 'en Google · 249 reseñas',
     ctaBook: 'Agendar cita',
-    ctaWhatsapp: 'Escríbenos por WhatsApp',
+    ctaWhatsapp: 'WhatsApp',
     whatsappMessage: 'Hola! Quisiera agendar una cita en Bacaanda 💈',
   },
   about: {
@@ -111,9 +111,8 @@ export const es: SiteCopy = {
     heading: 'Encuéntranos',
     addressLines: [
       'Av. Emilio Castelar 208',
-      'Local en Casa Castelar 215',
       'Polanco III Secc., Miguel Hidalgo',
-      '11550 Ciudad de México, CDMX',
+      '11550, CDMX',
     ],
     hoursHeading: 'Horario',
     hours: [
@@ -125,6 +124,8 @@ export const es: SiteCopy = {
     phoneLabel: 'Llámanos',
     whatsappLabel: 'WhatsApp',
     instagramLabel: 'Instagram',
+    wazeLabel: 'Waze',
+    mapsLabel: 'Google Maps',
     mapQuery: 'Barbería Bacaanda, Av. Emilio Castelar 208, Polanco, Ciudad de México',
   },
   finalCta: {

@@ -38,6 +38,8 @@ export interface SiteCopy {
     phoneLabel: string;
     whatsappLabel: string;
     instagramLabel: string;
+    wazeLabel: string;
+    mapsLabel: string;
     mapQuery: string;
   };
   finalCta: { heading: string; subheading: string; whatsappMessage: string };

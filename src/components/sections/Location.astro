@@ -1,5 +1,6 @@
 ---
-import { telUrl, whatsappUrl, instagramUrl, formattedPhone } from '@/lib/contact';
+import Button from '@/components/ui/Button.astro';
+import { telUrl, whatsappUrl, instagramUrl, wazeUrl, googleMapsUrl, formattedPhone } from '@/lib/contact';
 import type { SiteCopy } from '@/content/types';
 
 interface Props {
@@ -48,27 +49,44 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(copy.location
         <p class="text-sm text-muted">{copy.location.hoursNote}</p>
 
         <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a
-            href={telUrl()}
-            class="inline-flex items-center gap-2 rounded-full border border-purple px-5 py-2.5 text-sm font-semibold text-purple transition hover:bg-purple hover:text-text"
-          >
+          <Button href={telUrl()} variant="call" external={false}>
             {copy.location.phoneLabel} · {formattedPhone()}
-          </a>
-          <a
-            href={whatsappUrl(copy.finalCta.whatsappMessage)}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-5 py-2.5 text-sm font-semibold text-ink transition hover:brightness-95"
-          >
+          </Button>
+          <Button href={whatsappUrl(copy.finalCta.whatsappMessage)} variant="secondary">
             {copy.location.whatsappLabel}
-          </a>
+          </Button>
+          <Button href={instagramUrl()} variant="instagram">
+            {copy.location.instagramLabel}
+          </Button>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
           <a
-            href={instagramUrl()}
+            href={wazeUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 rounded-full border border-primary px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary hover:text-text"
+            class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-wide text-muted transition hover:border-gold hover:text-gold"
           >
-            {copy.location.instagramLabel}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+              <path d="M9 20l3-16 3 16M6 15h12" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            {copy.location.wazeLabel}
+          </a>
+          <a
+            href={googleMapsUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs font-semibold uppercase tracking-wide text-muted transition hover:border-gold hover:text-gold"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4">
+              <path
+                d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="12" cy="9.5" r="2.3" />
+            </svg>
+            {copy.location.mapsLabel}
           </a>
         </div>
       </div>

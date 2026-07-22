@@ -25,6 +25,18 @@ export function instagramUrl(): string {
   return `https://instagram.com/${INSTAGRAM_HANDLE}`;
 }
 
+// Exact coordinates for Barbería Bacaanda (Av. Emilio Castelar 208, Polanco), confirmed via Google Maps
+const LAT = 19.4311103;
+const LNG = -99.201133;
+
+export function wazeUrl(): string {
+  return `https://waze.com/ul?ll=${LAT},${LNG}&navigate=yes`;
+}
+
+export function googleMapsUrl(): string {
+  return `https://www.google.com/maps/dir/?api=1&destination=${LAT},${LNG}`;
+}
+
 export function formattedPhone(): string {
   // 5550564567 -> 55 5056 4567
   return `${PHONE_NUMBER.slice(0, 2)} ${PHONE_NUMBER.slice(2, 6)} ${PHONE_NUMBER.slice(6)}`;

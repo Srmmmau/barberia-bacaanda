@@ -20,7 +20,7 @@ export const en: SiteCopy = {
       'Precision cuts, hot towel shaves, and a drink on the house while you wait. Master barbers, bilingual environment.',
     ratingLabel: 'on Google · 249 reviews',
     ctaBook: 'Book a slot',
-    ctaWhatsapp: 'Message us on WhatsApp',
+    ctaWhatsapp: 'WhatsApp',
     whatsappMessage: "Hi! I'd like to book an appointment at Bacaanda 💈",
   },
   about: {
@@ -111,9 +111,8 @@ export const en: SiteCopy = {
     heading: 'Find us',
     addressLines: [
       'Av. Emilio Castelar 208',
-      'Local en Casa Castelar 215',
       'Polanco III Secc., Miguel Hidalgo',
-      '11550 Mexico City, CDMX',
+      '11550, Mexico City',
     ],
     hoursHeading: 'Hours',
     hours: [
@@ -125,6 +124,8 @@ export const en: SiteCopy = {
     phoneLabel: 'Call us',
     whatsappLabel: 'WhatsApp',
     instagramLabel: 'Instagram',
+    wazeLabel: 'Waze',
+    mapsLabel: 'Google Maps',
     mapQuery: 'Barberia Bacaanda, Av. Emilio Castelar 208, Polanco, Mexico City',
   },
   finalCta: {
