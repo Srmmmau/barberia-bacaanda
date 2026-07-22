@@ -1,6 +1,9 @@
 ---
 import '@/styles/globals.css';
+import Analytics from '@vercel/analytics/astro';
 import logo from '@/assets/brand/logo.png';
+import ogImage from '@/assets/gallery/mural-hero.jpg';
+import { instagramUrl } from '@/lib/contact';
 import type { Lang } from '@/lib/i18n';
 
 interface Props {
@@ -12,6 +15,9 @@ interface Props {
 const { lang, title, description } = Astro.props;
 const siteUrl = import.meta.env.PUBLIC_SITE_URL;
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
+const socialImage = new URL(ogImage.src, siteUrl).toString();
+const ogLocale = lang === 'es' ? 'es_MX' : 'en_US';
+const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_MX';
 ---
 
 <!doctype html>
@@ -28,25 +34,46 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
     <link rel="alternate" hreflang="x-default" href={new URL('/es/', siteUrl).toString()} />
 
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Barbería Bacaanda" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(logo.src, siteUrl).toString()} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:alt" content="Barbería Bacaanda — estudio de barbería en Polanco, CDMX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
 
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'HairSalon',
+      '@id': `${siteUrl}#business`,
       name: 'Barbería Bacaanda',
-      image: new URL(logo.src, siteUrl).toString(),
+      description,
+      image: socialImage,
+      logo: new URL(logo.src, siteUrl).toString(),
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Av. Emilio Castelar 208',
+        streetAddress: 'Av. Emilio Castelar 208, Local en Casa Castelar 215',
         addressLocality: 'Ciudad de México',
         addressRegion: 'CDMX',
         postalCode: '11550',
         addressCountry: 'MX',
       },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 19.431302,
+        longitude: -99.201079,
+      },
+      areaServed: {
+        '@type': 'Place',
+        name: 'Polanco, Miguel Hidalgo, CDMX',
+      },
+      hasMap: 'https://maps.google.com/?q=19.431302,-99.201079',
+      sameAs: [instagramUrl()],
       telephone: `+${import.meta.env.PUBLIC_PHONE_NUMBER}`,
       url: siteUrl,
       priceRange: '$$',
@@ -79,5 +106,28 @@ const canonical = new URL(Astro.url.pathname, siteUrl).toString();
   </head>
   <body class="font-body antialiased">
     <slot />
+    <Analytics />
+    <script>
+      import { track } from '@vercel/analytics';
+
+      type EventName = 'reservar_click' | 'whatsapp_click' | 'llamar_click';
+
+      // Clasifica cada enlace por su destino para medir conversiones reales
+      function classify(href: string | null): EventName | null {
+        if (!href) return null;
+        if (href.includes('wa.me') || href.includes('whatsapp')) return 'whatsapp_click';
+        if (href.startsWith('tel:')) return 'llamar_click';
+        if (href.includes('#agendar') || href.includes('agendapro')) return 'reservar_click';
+        return null;
+      }
+
+      document.addEventListener('click', (event) => {
+        const target = event.target as Element | null;
+        const link = target?.closest('a');
+        if (!link) return;
+        const name = classify(link.getAttribute('href'));
+        if (name) track(name);
+      });
+    </script>
   </body>
 </html>

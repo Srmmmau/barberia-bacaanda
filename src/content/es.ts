@@ -35,27 +35,46 @@ export const es: SiteCopy = {
   },
   services: {
     heading: 'Servicios',
-    subheading:
-      'Cada servicio incluye toalla caliente y una bebida de cortesía. Precios y horarios disponibles al agendar.',
+    subheading: 'Precios reales, directo de nuestra agenda. Todos incluyen bebida de cortesía.',
     items: [
       {
         name: 'Corte de cabello',
-        description: 'Corte a tijera y máquina, terminado con navaja en contorno y nuca.',
+        price: '$450',
+        duration: '1 hr',
+        description: 'Incluye depilación de oídos y nariz, masaje, lavado y garantía de 3 días.',
       },
       {
-        name: 'Diseño de barba',
-        description: 'Perfilado y diseño con navaja caliente para una línea limpia.',
+        name: 'Arreglo de barba',
+        price: '$370',
+        duration: '45 min',
+        description: 'Limpieza, delineado y recorte con toallas calientes y frías.',
       },
       {
-        name: 'Hot shave',
-        description: 'Afeitado clásico completo con toalla caliente y productos premium.',
+        name: 'Afeitado a navaja',
+        price: '$370',
+        duration: '45 min',
+        description: 'Aceite pre-shave, toalla caliente, espuma, navaja y after-shave.',
       },
       {
-        name: 'Combo corte + barba',
-        description: 'El servicio completo: corte, barba y hot shave en una sola cita.',
+        name: 'Paquete full pack',
+        price: '$720',
+        duration: '2 hrs',
+        description: 'Corte, barba, limpieza facial y mascarilla — el servicio completo.',
+      },
+      {
+        name: 'Trim (fade)',
+        price: '$350',
+        duration: '40 min',
+        description: 'Desvanecido de laterales y delineado de contornos.',
+      },
+      {
+        name: 'Corte de niño',
+        price: '$400',
+        duration: '1 hr',
+        description: 'Para menores de hasta 11 años. Incluye masaje y lavado de cabello.',
       },
     ],
-    ctaLabel: 'Ver disponibilidad y precios',
+    ctaLabel: 'Ver todos los servicios',
   },
   booking: {
     heading: 'Agenda tu cita',

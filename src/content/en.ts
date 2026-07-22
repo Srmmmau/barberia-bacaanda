@@ -35,27 +35,46 @@ export const en: SiteCopy = {
   },
   services: {
     heading: 'Services',
-    subheading:
-      'Every service includes a hot towel and a drink on the house. Pricing and availability shown when you book.',
+    subheading: 'Real prices, straight from our booking system. Every service includes a drink on the house.',
     items: [
       {
         name: 'Haircut',
-        description: 'Scissor and clipper cut, finished with a straight razor along the hairline and neck.',
+        price: '$450 MXN',
+        duration: '1 hr',
+        description: 'Includes ear and nose waxing, massage, wash, and a 3-day guarantee.',
       },
       {
-        name: 'Beard design',
-        description: 'Shaping and detailing with a hot razor for a clean line.',
+        name: 'Beard trim & shape',
+        price: '$370 MXN',
+        duration: '45 min',
+        description: 'Cleanup, lining, and trim with hot and cold towels.',
       },
       {
-        name: 'Hot shave',
-        description: 'A full classic shave with hot towels and premium products.',
+        name: 'Straight-razor shave',
+        price: '$370 MXN',
+        duration: '45 min',
+        description: 'Pre-shave oil, hot towel, lather, straight razor, and after-shave.',
       },
       {
-        name: 'Cut + beard combo',
-        description: 'The complete service: haircut, beard work, and hot shave in one visit.',
+        name: 'Full pack',
+        price: '$720 MXN',
+        duration: '2 hrs',
+        description: 'Haircut, beard work, facial cleanse, and mask — the complete service.',
+      },
+      {
+        name: 'Fade trim',
+        price: '$350 MXN',
+        duration: '40 min',
+        description: 'Fades the sides and lines up the contours.',
+      },
+      {
+        name: "Kids' haircut",
+        price: '$400 MXN',
+        duration: '1 hr',
+        description: 'For kids up to age 11. Includes massage and hair wash.',
       },
     ],
-    ctaLabel: 'Check availability and pricing',
+    ctaLabel: 'See all services',
   },
   booking: {
     heading: 'Book your appointment',

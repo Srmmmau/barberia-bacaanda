@@ -11,7 +11,12 @@ export default defineConfig({
     locales: ['es', 'en'],
     routing: { prefixDefaultLocale: true },
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // No indexar las páginas de error 404 en el sitemap
+      filter: (page) => !page.includes('/404'),
+    }),
+  ],
   redirects: {
     '/': '/es/',
   },

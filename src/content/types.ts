@@ -18,7 +18,7 @@ export interface SiteCopy {
   services: {
     heading: string;
     subheading: string;
-    items: { name: string; description: string }[];
+    items: { name: string; price: string; duration: string; description: string }[];
     ctaLabel: string;
   };
   booking: { heading: string; subheading: string; fallbackLabel: string };

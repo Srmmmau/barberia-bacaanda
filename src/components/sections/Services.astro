@@ -16,17 +16,21 @@ const { copy } = Astro.props;
       <p class="mt-3 text-base text-muted sm:text-lg">{copy.services.subheading}</p>
     </div>
 
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {copy.services.items.map((item) => (
         <div class="rounded-2xl border border-border bg-surface p-6 transition hover:border-gold/60">
-          <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-red/15 text-red">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
-              <circle cx="6" cy="6" r="2.5" />
-              <circle cx="6" cy="18" r="2.5" />
-              <path d="M8.5 7.5 19 18M19 6 8.5 16.5" stroke-linecap="round" />
-            </svg>
+          <div class="mb-4 flex items-center justify-between">
+            <div class="flex h-10 w-10 items-center justify-center rounded-full bg-red/15 text-red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-5 w-5">
+                <circle cx="6" cy="6" r="2.5" />
+                <circle cx="6" cy="18" r="2.5" />
+                <path d="M8.5 7.5 19 18M19 6 8.5 16.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <span class="font-display text-xl text-gold">{item.price}</span>
           </div>
           <h3 class="font-display text-lg uppercase tracking-wide">{item.name}</h3>
+          <p class="mt-1 text-xs uppercase tracking-wide text-muted">{item.duration}</p>
           <p class="mt-2 text-sm text-muted">{item.description}</p>
         </div>
       ))}
