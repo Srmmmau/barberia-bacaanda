@@ -36,12 +36,12 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(copy.location
 
         <div>
           <h3 class="font-display text-sm uppercase tracking-wide text-muted">{copy.location.hoursHeading}</h3>
-          <dl class="mt-2 space-y-1">
+          <dl class="mt-2 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
             {copy.location.hours.map((row) => (
-              <div class="flex justify-between gap-4 text-sm">
+              <>
                 <dt class="text-text/90">{row.label}</dt>
-                <dd class="text-muted">{row.time}</dd>
-              </div>
+                <dd class="text-right text-muted">{row.time}</dd>
+              </>
             ))}
           </dl>
         </div>
