@@ -117,8 +117,8 @@ export const es: SiteCopy = {
     hoursHeading: 'Horario',
     hours: [
       { label: 'Lunes a viernes', time: '10 AM – 10 PM' },
-      { label: 'Sábado', time: '8 AM – 8 PM' },
-      { label: 'Domingo', time: '8 AM – 7 PM' },
+      { label: 'Sábado', time: '08 AM – 08 PM' },
+      { label: 'Domingo', time: '08 AM – 07 PM' },
     ],
     hoursNote: 'Disponibilidad en tiempo real al agendar en línea o por WhatsApp.',
     phoneLabel: 'Llámanos',
