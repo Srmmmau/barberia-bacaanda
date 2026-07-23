@@ -15,7 +15,7 @@ export const es: SiteCopy = {
   },
   hero: {
     eyebrow: 'Polanco · Est. 2022',
-    title: 'La única barbería studio en Polanco',
+    title: 'La barbería studio en Polanco',
     subtitle:
       'Cortes de autor, hot shave con toalla caliente y una bebida de cortesía mientras esperas. Barberos maestros, ambiente bilingüe.',
     ratingLabel: 'en Google · 249 reseñas',
