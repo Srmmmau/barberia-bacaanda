@@ -1,7 +1,7 @@
 ---
 interface Props {
   href: string;
-  variant?: 'primary' | 'secondary' | 'call' | 'instagram' | 'outline' | 'outline-gold';
+  variant?: 'primary' | 'secondary' | 'call' | 'instagram' | 'outline' | 'outline-gold' | 'waze' | 'maps';
   class?: string;
   external?: boolean;
 }
@@ -15,6 +15,8 @@ const variants = {
   instagram: 'bg-primary text-text hover:bg-primary-hover',
   outline: 'border border-border text-text hover:border-gold hover:text-gold',
   'outline-gold': 'border border-gold text-gold hover:bg-gold hover:text-ink',
+  waze: 'bg-waze text-white hover:bg-waze-hover',
+  maps: 'bg-maps text-white hover:bg-maps-hover',
 };
 ---
 
