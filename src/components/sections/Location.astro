@@ -40,7 +40,7 @@ const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(copy.location
             {copy.location.hours.map((row) => (
               <>
                 <dt class="text-text/90">{row.label}</dt>
-                <dd class="text-right text-muted">{row.time}</dd>
+                <dd class="text-right tabular-nums text-muted">{row.time}</dd>
               </>
             ))}
           </dl>
