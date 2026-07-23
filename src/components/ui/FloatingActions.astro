@@ -1,0 +1,16 @@
+---
+import WhatsAppFloatingButton from '@/components/ui/WhatsAppFloatingButton.astro';
+import InstagramFloatingButton from '@/components/ui/InstagramFloatingButton.astro';
+import type { SiteCopy } from '@/content/types';
+
+interface Props {
+  copy: SiteCopy;
+}
+
+const { copy } = Astro.props;
+---
+
+<div class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+  <InstagramFloatingButton label={copy.location.instagramLabel} />
+  <WhatsAppFloatingButton message={copy.hero.whatsappMessage} label={copy.hero.ctaWhatsapp} />
+</div>
